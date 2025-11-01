@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 awk -v term_cols="${width:-$(tput cols || echo 80)}" 'BEGIN{
     s="  ";
@@ -7,9 +8,9 @@ awk -v term_cols="${width:-$(tput cols || echo 80)}" 'BEGIN{
         g = (colnum*510/term_cols);
         b = (colnum*255/term_cols);
         if (g>255) g = 510-g;
-        	printf "\033[48;2;%d;%d;%dm", r,g,b;
-	        printf "\033[38;2;%d;%d;%dm", 255-r,255-g,255-b;
-	        printf "%s\033[0m", substr(s,colnum%2+1,1);
+            printf "\033[48;2;%d;%d;%dm", r,g,b;
+            printf "\033[38;2;%d;%d;%dm", 255-r,255-g,255-b;
+            printf "%s\033[0m", substr(s,colnum%2+1,1);
     }
     printf "\n";
 }'
