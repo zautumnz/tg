@@ -9,7 +9,6 @@ import (
 )
 
 var defaultConfig = Config{
-	Opacity: 1.0,
 	Font: Font{
 		Family:    "Hasklig",
 		Size:      18.0,
@@ -53,18 +52,7 @@ func DefaultTheme(conf *Config) (*termutil.Theme, error) {
 }
 
 func LoadTheme(conf *Config) (*termutil.Theme, error) {
-
-	themeConf, err := loadTheme("")
-	if err != nil {
-		return nil, err
-	}
-
-	return loadThemeFromConf(conf, themeConf)
-}
-
-func LoadThemeFromPath(conf *Config, path string) (*termutil.Theme, error) {
-
-	themeConf, err := loadTheme(path)
+	themeConf, err := loadTheme()
 	if err != nil {
 		return nil, err
 	}
@@ -73,7 +61,6 @@ func LoadThemeFromPath(conf *Config, path string) (*termutil.Theme, error) {
 }
 
 func loadThemeFromConf(conf *Config, themeConf *Theme) (*termutil.Theme, error) {
-
 	factory := termutil.NewThemeFactory()
 
 	colours := map[termutil.Colour]string{
@@ -102,7 +89,7 @@ func loadThemeFromConf(conf *Config, themeConf *Theme) (*termutil.Theme, error) 
 	}
 
 	for key, colHex := range colours {
-		col, err := colourFromHex(colHex, conf.Opacity)
+		col, err := colourFromHex(colHex)
 		if err != nil {
 			return nil, fmt.Errorf("invalid hex value '%s' in theme", colHex)
 		}
@@ -116,7 +103,7 @@ func loadThemeFromConf(conf *Config, themeConf *Theme) (*termutil.Theme, error) 
 
 }
 
-func colourFromHex(hexadecimal string, opacity float64) (color.Color, error) {
+func colourFromHex(hexadecimal string) (color.Color, error) {
 	if len(hexadecimal) == 0 {
 		return nil, fmt.Errorf("colour value cannot be empty")
 	}
@@ -133,6 +120,6 @@ func colourFromHex(hexadecimal string, opacity float64) (color.Color, error) {
 		R: decoded[0],
 		G: decoded[1],
 		B: decoded[2],
-		A: uint8(opacity * 0xff),
+		A: uint8(1.0 * 0xff),
 	}, nil
 }

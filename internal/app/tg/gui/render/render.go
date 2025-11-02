@@ -32,7 +32,7 @@ type Font struct {
 	DotDepth int
 }
 
-func New(screen *ebiten.Image, terminal *termutil.Terminal, fontManager *font.Manager, popups []popup.Message, opacity float64, enableLigatures bool, cursorImage *ebiten.Image) *Render {
+func New(screen *ebiten.Image, terminal *termutil.Terminal, fontManager *font.Manager, popups []popup.Message, enableLigatures bool, cursorImage *ebiten.Image) *Render {
 	w, h := screen.Size()
 	return &Render{
 		screen:      screen,
@@ -48,7 +48,7 @@ func New(screen *ebiten.Image, terminal *termutil.Terminal, fontManager *font.Ma
 			CellSize: fontManager.CharSize(),
 			DotDepth: fontManager.DotDepth(),
 		},
-		opacity:         opacity,
+		opacity:         1.0,
 		popups:          popups,
 		enableLigatures: enableLigatures,
 		cursorImage:     cursorImage,

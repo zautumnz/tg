@@ -35,7 +35,6 @@ type Terminal struct {
 	theme             *Theme
 	running           bool
 	shell             string
-	initialCommand    string
 }
 
 // New creates a new terminal instance
@@ -174,13 +173,7 @@ func (t *Terminal) Run(updateChan chan struct{}, rows uint16, cols uint16) error
 
 	t.running = true
 
-	t.windowManipulator.SetTitle("term")
-
-	if t.initialCommand != "" {
-		if err := t.WriteToPty([]byte(t.initialCommand)); err != nil {
-			return err
-		}
-	}
+	t.windowManipulator.SetTitle("tg")
 
 	_, _ = io.Copy(t, t.pty)
 	close(t.closeChan)

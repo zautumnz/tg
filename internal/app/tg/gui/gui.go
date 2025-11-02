@@ -34,7 +34,6 @@ type GUI struct {
 	popupMessages    []popup.Message
 	startupFuncs     []func(g *GUI)
 	keyState         *keyState
-	opacity          float64
 	enableLigatures  bool
 	cursorImage      *ebiten.Image
 }

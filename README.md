@@ -5,13 +5,9 @@ is a fork of [Aminal](https://github.com/zautumnz/tg/tree/legacy-aminal).
 
 ## TODO:
 
-* Fix the bug in pasteboard in clipboard (numbers are not booleans)
 * Remove as much other stuff as possible, only care about this being fast and working on Mac and showing unicode
-* Better default font with cjk support
-* Get rid of config parsing, just need to modify and rebuild
-* Get rid of transparency
-* Get rid of themes
-* Just one cursor style
+* Find a monospace font with CJK support and ligatures
+* Flatten file structure
 
 ## Key Bindings
 

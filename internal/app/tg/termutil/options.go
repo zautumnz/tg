@@ -22,18 +22,6 @@ func WithTheme(theme *Theme) Option {
 	}
 }
 
-func WithShell(shell string) Option {
-	return func(t *Terminal) {
-		t.shell = shell
-	}
-}
-
-func WithInitialCommand(cmd string) Option {
-	return func(t *Terminal) {
-		t.initialCommand = cmd + "\n"
-	}
-}
-
 func WithWindowManipulator(m WindowManipulator) Option {
 	return func(t *Terminal) {
 		t.windowManipulator = m
