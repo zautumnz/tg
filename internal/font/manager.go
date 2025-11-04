@@ -119,7 +119,7 @@ func (m *Manager) calcMetrics() error {
 	return nil
 }
 
-//go:embed Hasklig-Regular.otf
+//go:embed SarasaTermCL-Regular.ttf
 var hasklig []byte
 
 func (m *Manager) loadDefaultFonts() error {
