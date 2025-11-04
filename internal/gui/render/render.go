@@ -4,9 +4,9 @@ import (
 	"image"
 
 	"github.com/hajimehoshi/ebiten/v2"
-	"github.com/zautumnz/tg/internal/app/tg/font"
-	"github.com/zautumnz/tg/internal/app/tg/gui/popup"
-	"github.com/zautumnz/tg/internal/app/tg/termutil"
+	"github.com/zautumnz/tg/internal/font"
+	"github.com/zautumnz/tg/internal/gui/popup"
+	"github.com/zautumnz/tg/internal/termutil"
 	imagefont "golang.org/x/image/font"
 )
 

@@ -7,7 +7,6 @@ is a fork of [Aminal](https://github.com/zautumnz/tg/tree/legacy-aminal).
 
 * Remove as much other stuff as possible, only care about this being fast and working on Mac and showing unicode
 * Find a monospace font with CJK support and ligatures
-* Flatten file structure
 
 ## Key Bindings
 

@@ -13,7 +13,7 @@ ifndef STATICCHECK
 endif
 
 build: ## build the binary
-	@go build -ldflags="-X github.com/zautumnz/tg/internal/app/tg/version.Version=$(VERSION)" ./cmd/tg
+	@go build -ldflags="-X github.com/zautumnz/tg/internal/version.Version=$(VERSION)" ./cmd/tg
 
 install: ## install tg to your system
 	@mkdir -p $(PREFIX)/bin

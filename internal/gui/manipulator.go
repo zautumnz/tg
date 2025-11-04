@@ -2,7 +2,7 @@ package gui
 
 import (
 	"github.com/hajimehoshi/ebiten/v2"
-	"github.com/zautumnz/tg/internal/app/tg/termutil"
+	"github.com/zautumnz/tg/internal/termutil"
 )
 
 type WindowManipulator struct {

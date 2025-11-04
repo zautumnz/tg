@@ -6,10 +6,10 @@ import (
 	"os"
 
 	"github.com/spf13/cobra"
-	"github.com/zautumnz/tg/internal/app/tg/config"
-	"github.com/zautumnz/tg/internal/app/tg/gui"
-	"github.com/zautumnz/tg/internal/app/tg/termutil"
-	"github.com/zautumnz/tg/internal/app/tg/version"
+	"github.com/zautumnz/tg/internal/config"
+	"github.com/zautumnz/tg/internal/gui"
+	"github.com/zautumnz/tg/internal/termutil"
+	"github.com/zautumnz/tg/internal/version"
 )
 
 var debugFile string

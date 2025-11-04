@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/zautumnz/tg/internal/app/tg/cmd"
+	"github.com/zautumnz/tg/internal/cmd"
 )
 
 func main() {

@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/hajimehoshi/ebiten/v2"
-	"github.com/zautumnz/tg/internal/app/tg/termutil"
+	"github.com/zautumnz/tg/internal/termutil"
 )
 
 // time allowed between mouse clicks to chain them into e.g. double-click

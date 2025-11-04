@@ -5,7 +5,7 @@ import (
 	"math"
 	"strings"
 
-	"github.com/zautumnz/tg/internal/app/tg/sixel"
+	"github.com/zautumnz/tg/internal/sixel"
 )
 
 type Sixel struct {

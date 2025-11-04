@@ -5,7 +5,7 @@ import (
 	"image/color"
 	"time"
 
-	"github.com/zautumnz/tg/internal/app/tg/gui/popup"
+	"github.com/zautumnz/tg/internal/gui/popup"
 )
 
 const (

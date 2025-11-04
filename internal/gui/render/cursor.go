@@ -4,7 +4,7 @@ import (
 	"github.com/hajimehoshi/ebiten/v2"
 	"github.com/hajimehoshi/ebiten/v2/ebitenutil"
 	"github.com/hajimehoshi/ebiten/v2/text"
-	"github.com/zautumnz/tg/internal/app/tg/termutil"
+	"github.com/zautumnz/tg/internal/termutil"
 )
 
 func (r *Render) drawCursor() {

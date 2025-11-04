@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"image/color"
 
-	"github.com/zautumnz/tg/internal/app/tg/termutil"
+	"github.com/zautumnz/tg/internal/termutil"
 )
 
 var defaultConfig = Config{
