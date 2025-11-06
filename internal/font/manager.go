@@ -120,11 +120,11 @@ func (m *Manager) calcMetrics() error {
 }
 
 //go:embed SarasaTermCL-Regular.ttf
-var hasklig []byte
+var sarasa []byte
 
 func (m *Manager) loadDefaultFonts() error {
 
-	regular, err := opentype.Parse(hasklig)
+	regular, err := opentype.Parse(sarasa)
 	if err != nil {
 		return err
 	}

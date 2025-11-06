@@ -10,7 +10,7 @@ import (
 
 var defaultConfig = Config{
 	Font: Font{
-		Family:    "Hasklig",
+		Family:    "Sarasa",
 		Size:      18.0,
 		DPI:       72.0,
 		Ligatures: true,
