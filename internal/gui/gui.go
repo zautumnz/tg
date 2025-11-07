@@ -5,7 +5,6 @@ import (
 	"image"
 	"math/rand"
 	"os"
-	"strings"
 	"time"
 
 	"github.com/zautumnz/tg/internal/font"
@@ -102,48 +101,4 @@ func (g *GUI) watchForUpdate() {
 			}()
 		}
 	}
-}
-
-func (g *GUI) CellSize() image.Point {
-	return g.fontManager.CharSize()
-}
-
-func (g *GUI) Highlight(start termutil.Position, end termutil.Position, label string, img image.Image) {
-
-	if label == "" && img == nil {
-		g.terminal.GetActiveBuffer().Highlight(start, end, nil)
-		return
-	}
-
-	annotation := &termutil.Annotation{
-		Text:  label,
-		Image: img,
-	}
-
-	if label != "" {
-		lines := strings.Split(label, "\n")
-		annotation.Height = float64(len(lines))
-		for _, line := range lines {
-			if float64(len(line)) > annotation.Width {
-				annotation.Width = float64(len(line))
-			}
-		}
-	}
-
-	if img != nil {
-		annotation.Height += float64(img.Bounds().Dy() / g.fontManager.CharSize().Y)
-		if label != "" {
-			annotation.Height += 0.5 // half line spacing between image + text
-		}
-		imgCellWidth := img.Bounds().Dx() / g.fontManager.CharSize().X
-		if float64(imgCellWidth) > annotation.Width {
-			annotation.Width = float64(imgCellWidth)
-		}
-	}
-
-	g.terminal.GetActiveBuffer().Highlight(start, end, annotation)
-}
-
-func (g *GUI) ClearHighlight() {
-	g.terminal.GetActiveBuffer().ClearHighlight()
 }

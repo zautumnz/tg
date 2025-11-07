@@ -1,0 +1,6 @@
+# all this should render just fine
+const foo = ({ a, b }) => a + b
+朝辞白帝彩云间
+朝辭白帝彩雲間
+zhāo cí bái dì cǎiyún jiān
+비켜봐 봐 비켜 핑계는 우린 본질 속에 진주가 될래
