@@ -77,10 +77,6 @@ func (r *Render) drawRow(viewY int, defaultBackgroundColour color.Color, default
 			)
 		}
 
-		if r.enableLigatures && skipRunes == 0 {
-			skipRunes = r.handleLigatures(viewX, uint16(viewY), useFace, colour)
-		}
-
 		if skipRunes > 0 {
 			skipRunes--
 			continue
@@ -88,5 +84,10 @@ func (r *Render) drawRow(viewY int, defaultBackgroundColour color.Color, default
 
 		// draw the text for the cell
 		text.Draw(r.frame, string(cell.Rune().Rune), useFace, pixelX, pixelY+r.font.DotDepth, colour)
+
+		// if this is a wide character, skip the next cells it occupies
+		if cell.Rune().Width > 1 {
+			skipRunes = cell.Rune().Width - 1
+		}
 	}
 }

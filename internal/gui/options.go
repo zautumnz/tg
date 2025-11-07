@@ -21,10 +21,3 @@ func WithFontDPI(dpi float64) func(g *GUI) error {
 		return nil
 	}
 }
-
-func WithLigatures(enable bool) func(g *GUI) error {
-	return func(g *GUI) error {
-		g.enableLigatures = enable
-		return nil
-	}
-}

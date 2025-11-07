@@ -6,6 +6,7 @@ require (
 	git.wow.st/gmp/clip v0.0.0-20210715022220-4c310187b751
 	github.com/creack/pty v1.1.12
 	github.com/hajimehoshi/ebiten/v2 v2.2.0-alpha.11.0.20210724070913-1706d9436a78
+	github.com/mattn/go-runewidth v0.0.19
 	github.com/spf13/cobra v1.1.3
 	github.com/stretchr/testify v1.7.0
 	golang.org/x/image v0.0.0-20210628002857-a66eb6448b8d
@@ -13,6 +14,7 @@ require (
 )
 
 require (
+	github.com/clipperhouse/uax29/v2 v2.2.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/go-gl/glfw/v3.3/glfw v0.0.0-20210715014612-ab6297867137 // indirect
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect

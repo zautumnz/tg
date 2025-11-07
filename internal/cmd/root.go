@@ -63,7 +63,6 @@ var rootCmd = &cobra.Command{
 			gui.WithFontDPI(conf.Font.DPI),
 			gui.WithFontSize(conf.Font.Size),
 			gui.WithFontFamily(conf.Font.Family),
-			gui.WithLigatures(conf.Font.Ligatures),
 		}
 
 		g, err := gui.New(terminal, options...)

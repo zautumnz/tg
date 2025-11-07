@@ -10,10 +10,9 @@ type Config struct {
 }
 
 type Font struct {
-	Family    string
-	Size      float64
-	DPI       float64
-	Ligatures bool
+	Family string
+	Size   float64
+	DPI    float64
 }
 
 type Cursor struct {

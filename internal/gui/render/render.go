@@ -11,19 +11,18 @@ import (
 )
 
 type Render struct {
-	frame           *ebiten.Image
-	screen          *ebiten.Image
-	terminal        *termutil.Terminal
-	buffer          *termutil.Buffer
-	theme           *termutil.Theme
-	fontManager     *font.Manager
-	pixelWidth      int
-	pixelHeight     int
-	font            Font
-	opacity         float64
-	popups          []popup.Message
-	enableLigatures bool
-	cursorImage     *ebiten.Image
+	frame       *ebiten.Image
+	screen      *ebiten.Image
+	terminal    *termutil.Terminal
+	buffer      *termutil.Buffer
+	theme       *termutil.Theme
+	fontManager *font.Manager
+	pixelWidth  int
+	pixelHeight int
+	font        Font
+	opacity     float64
+	popups      []popup.Message
+	cursorImage *ebiten.Image
 }
 
 type Font struct {
@@ -32,7 +31,7 @@ type Font struct {
 	DotDepth int
 }
 
-func New(screen *ebiten.Image, terminal *termutil.Terminal, fontManager *font.Manager, popups []popup.Message, enableLigatures bool, cursorImage *ebiten.Image) *Render {
+func New(screen *ebiten.Image, terminal *termutil.Terminal, fontManager *font.Manager, popups []popup.Message, cursorImage *ebiten.Image) *Render {
 	w, h := screen.Size()
 	return &Render{
 		screen:      screen,
@@ -48,10 +47,9 @@ func New(screen *ebiten.Image, terminal *termutil.Terminal, fontManager *font.Ma
 			CellSize: fontManager.CharSize(),
 			DotDepth: fontManager.DotDepth(),
 		},
-		opacity:         1.0,
-		popups:          popups,
-		enableLigatures: enableLigatures,
-		cursorImage:     cursorImage,
+		opacity:     1.0,
+		popups:      popups,
+		cursorImage: cursorImage,
 	}
 }
 

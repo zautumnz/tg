@@ -8,7 +8,7 @@ import (
 // Draw renders the terminal GUI to the ebtien window. Required to implement the ebiten interface.
 func (g *GUI) Draw(screen *ebiten.Image) {
 	render.
-		New(screen, g.terminal, g.fontManager, g.popupMessages, g.enableLigatures, g.cursorImage).
+		New(screen, g.terminal, g.fontManager, g.popupMessages, g.cursorImage).
 		Draw()
 
 }

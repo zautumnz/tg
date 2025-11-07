@@ -10,6 +10,7 @@ import (
 	"sync"
 
 	"github.com/creack/pty"
+	"github.com/mattn/go-runewidth"
 	"golang.org/x/term"
 )
 
@@ -101,11 +102,12 @@ func (t *Terminal) Theme() *Theme {
 func (t *Terminal) Write(data []byte) (n int, err error) {
 	reader := bufio.NewReader(bytes.NewBuffer(data))
 	for {
-		r, size, err := reader.ReadRune()
+		r, _, err := reader.ReadRune()
 		if err == io.EOF {
 			break
 		}
-		t.processChan <- MeasuredRune{Rune: r, Width: size}
+		width := runewidth.RuneWidth(r)
+		t.processChan <- MeasuredRune{Rune: r, Width: width}
 	}
 	return len(data), nil
 }

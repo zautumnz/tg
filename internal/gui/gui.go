@@ -33,7 +33,6 @@ type GUI struct {
 	popupMessages    []popup.Message
 	startupFuncs     []func(g *GUI)
 	keyState         *keyState
-	enableLigatures  bool
 	cursorImage      *ebiten.Image
 }
 
@@ -47,12 +46,11 @@ const (
 func New(terminal *termutil.Terminal, options ...Option) (*GUI, error) {
 
 	g := &GUI{
-		terminal:        terminal,
-		size:            image.Point{80, 30},
-		updateChan:      make(chan struct{}),
-		fontManager:     font.NewManager(),
-		keyState:        newKeyState(),
-		enableLigatures: true,
+		terminal:    terminal,
+		size:        image.Point{80, 30},
+		updateChan:  make(chan struct{}),
+		fontManager: font.NewManager(),
+		keyState:    newKeyState(),
 	}
 
 	for _, option := range options {

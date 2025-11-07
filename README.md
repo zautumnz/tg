@@ -8,7 +8,7 @@ Font: SarasaTermCL
 ## TODO:
 
 * Remove as much other stuff as possible, only care about this being fast and working on Mac and showing unicode
-* Find a better monospace font with CJK support and ligatures
+* Find a better monospace font with CJK support
 
 ## Key Bindings
 
