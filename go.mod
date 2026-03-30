@@ -1,6 +1,6 @@
 module github.com/zautumnz/tg
 
-go 1.25
+go 1.25.0
 
 require (
 	git.wow.st/gmp/clip v0.0.0-20210715022220-4c310187b751
@@ -9,7 +9,7 @@ require (
 	github.com/mattn/go-runewidth v0.0.19
 	github.com/spf13/cobra v1.1.3
 	github.com/stretchr/testify v1.7.0
-	golang.org/x/image v0.0.0-20210628002857-a66eb6448b8d
+	golang.org/x/image v0.38.0
 	golang.org/x/term v0.0.0-20201126162022-7de9c90e9dd1
 )
 
@@ -22,8 +22,8 @@ require (
 	github.com/spf13/pflag v1.0.5 // indirect
 	golang.org/x/exp v0.0.0-20191030013958-a1ab85dbe136 // indirect
 	golang.org/x/mobile v0.0.0-20210716004757-34ab1303b554 // indirect
-	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c // indirect
+	golang.org/x/sync v0.20.0 // indirect
 	golang.org/x/sys v0.16.0 // indirect
-	golang.org/x/text v0.3.6 // indirect
+	golang.org/x/text v0.35.0 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c // indirect
 )
